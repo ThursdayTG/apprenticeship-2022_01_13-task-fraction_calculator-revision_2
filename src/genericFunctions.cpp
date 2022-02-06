@@ -8,6 +8,8 @@ using std::cin;
 using std::string;
 
 
+
+
 void clearScreen()
 {
 	cout.flush();
@@ -20,11 +22,13 @@ void clearScreen()
 	 */
 }
 
+
 void pause()
 {
 	cin.ignore();
 	cin.get();
 }
+
 
 bool queryRestart()
 {
