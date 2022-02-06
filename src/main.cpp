@@ -20,8 +20,6 @@ int main()
 
 	do
 	{
-		clearScreen();
-		cout << "\n";
 		outStandard();
 
 
@@ -31,15 +29,21 @@ int main()
 			loop = false;
 
 			//=== user input
-			int  num1 = inInt();   // numerator
-			char sep1 = inChar();  // separator
-			int  den1 = inInt();   // denominator
+			int  num1;   // numerator
+			char sep1;  // separator
+			int  den1;   // denominator
+			cout << " fraction 1: \t\t";
+			cin  >> num1 >> sep1 >> den1;
 
-			char mathOp = inChar();
+			char mathOp;
+			cout << " mathematical operator:  ";
+			cin  >> mathOp;
 
-			int  num2 = inInt();
-			char sep2 = inChar();
-			int  den2 = inInt();
+			int  num2;
+			char sep2;
+			int  den2;
+			cout << " fraction 2: \t\t";
+			cin  >> num2 >> sep2 >> den2;
 
 
 			//=== operations
@@ -88,12 +92,14 @@ int main()
 
 
 			//=== output
+			clearScreen();
 			outStandard();
 
 			cout
-			<< " fraction 1: " << num1 << sep1 << den1 << "\n"
-			<< " fraction 2: " << num2 << sep2 << den2 << "\n"
-			<< " result: "     << result
+			<< " fraction 1: \t\t" << num1 << sep1 << den1 << "\n"
+			<< " mathematical operator:  " << mathOp << "\n"
+			<< " fraction 2: \t\t" << num2 << sep2 << den2 << "\n"
+			<< " result: \t\t"     << result
 			<< " \n";
 		}
 

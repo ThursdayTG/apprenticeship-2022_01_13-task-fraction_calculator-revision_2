@@ -49,7 +49,10 @@ bool queryRestart()
 
 void outStandard()
 {
+	clearScreen();
+
 	cout
+	<< "\n"
 	<< " --- --= === FRACTION CALCULATOR === =-- --- \n"
 	<< " \n"
 	<< " user input: \n"
