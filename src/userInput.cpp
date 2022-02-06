@@ -13,7 +13,7 @@ using std::string;
 
 
 
-int inputInt()
+int inInt()
 {
 	string input;
 	bool   loop = true;
@@ -22,7 +22,7 @@ int inputInt()
 	{
 		loop = false;
 
-		cout << "input: ";
+		cout << "input (int): ";
 		cin  >> input;
 
 		if (    input == "quit"
@@ -37,16 +37,19 @@ int inputInt()
 }
 
 
-char inputChar()
+char inChar()
 {
 	char input = '0';
-	cin >> input;
+
+	cout << "input (char): ";
+	cin  >> input;
+
 	return input;
 }
 
 
 
-
+/*
 void userInputOld()
 {
 	using std::cout;
@@ -100,3 +103,4 @@ void userInputOld()
 				<< num2 << inputChar2 << den2;
 	}
 }
+*/

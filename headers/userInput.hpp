@@ -2,8 +2,8 @@
 #define HEADERS_USERINPUT
 
 
-int inputInt();
-int inputChar();
+int inInt();
+int inChar();
 
 
 #endif

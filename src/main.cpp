@@ -3,6 +3,7 @@
 
 #include "../headers/genericFunctions.hpp"
 #include "../headers/userInput.hpp"
+#include "../headers/algorithms.hpp"
 
 
 using std::cout;
@@ -21,37 +22,80 @@ int main()
 	{
 		clearScreen();
 		cout << "\n";
+		outStandard();
 
 
-		//=== standard output
-		cout
-		<< " --- --= === FRACTION CALCULATOR === =-- --- \n"
-		<< " \n"
-		<< " user input: \n"
-		<< " numerator 1 - separation character - denumerator 1 \n"
-		<< " mathematical operator ( + || - || * || / ) \n"
-		<< " numerator 2 - separation character - denumerator 2 \n"
-		<< " \n";
+		bool loop = true;
+		while (loop == true)
+		{
+			loop = false;
+
+			//=== user input
+			int  num1 = inInt();   // numerator
+			char sep1 = inChar();  // separator
+			int  den1 = inInt();   // denominator
+
+			char mathOp = inChar();
+
+			int  num2 = inInt();
+			char sep2 = inChar();
+			int  den2 = inInt();
 
 
-		//=== user input
-		int  num1 = inputInt();   // numerator
-		char sep1 = inputChar();  // separator
-		int  den1 = inputInt();   // denominator
+			//=== operations
+			{
+				int temp;
 
-		char mathOp = inputChar();
+				temp = num1;
+				num1 = cancelNum(num1, den1);
+				den1 = cancelDen(temp, den1);
 
-		int  num2 = inputInt();
-		char sep2 = inputChar();
-		int  den2 = inputInt();
+				temp = num2;
+				num2 = cancelNum(num2, den2);
+				den2 = cancelDen(temp, den2);
+			}
+
+			float result = 0.0;
+
+			switch (mathOp)
+			{
+				case '1': case '+':
+				{
+					result = addition(num1, den1, num2, den2);
+					break;
+				}
+				case '2': case '-':
+				{
+					result = subtraction(num1, den1, num2, den2);
+					break;
+				}
+				case '3': case '*':
+				{
+					result = multiplication(num1, den1, num2, den2);
+					break;
+				}
+				case '4': case '/':
+				{
+					result = division(num1, den1, num2, den2);
+					break;
+				}
+				default:
+				{
+					mathOp = '0';
+					loop = true;
+				}
+			}
 
 
-		//=== functions
-		//lorem_ipsum
+			//=== output
+			outStandard();
 
-
-		//=== output
-		//lorem_ipsum
+			cout
+			<< " fraction 1: " << num1 << sep1 << den1 << "\n"
+			<< " fraction 2: " << num2 << sep2 << den2 << "\n"
+			<< " result: "     << result
+			<< " \n";
+		}
 
 
 		//=== end block
@@ -62,61 +106,3 @@ int main()
 
 	return 0;
 }
-
-/*
-int main() {
-
-	// used to determine whether do-while loop should be repeated manually
-	bool	restartOperator;
-
-	do {
-
-		// local variable declaration
-		bool	loop = true;
-		char	inputChar1, inputChar2;
-		int		num1, den1;
-		int		num2, den2;
-
-		float	output;
-
-
-		// default output
-		//lorem_ipsum
-
-
-			// primary function execution
-			switch (inputChar2) {
-				case '1': case '+': case 'a': case 'A':
-					output = A(num1, den1, num2, den2);
-				break;
-				case '2': case '-': case 'b': case 'B':
-					output = B(num1, den1, num2, den2);
-				break;
-				case '3': case '*': case 'c': case 'C':
-					output = C(num1, den1, num2, den2);
-				break;
-				case '4': case '/': case 'd': case 'D':
-					output = D(num1, den1, num2, den2);
-				break;
-				default:
-					loop = true;
-			}
-		}
-
-
-		// output
-		cout	<< " \n result: "
-				<< output
-				<< " \n\n"
-				<< " - - - - - ";
-
-
-		// end block
-		restartOperator = queryRestart();	// asks user whether current section of program should be looped
-		cls();								// clears screen
-
-	}	while (restartOperator == true);
-
-	return 0;
-}
-*/

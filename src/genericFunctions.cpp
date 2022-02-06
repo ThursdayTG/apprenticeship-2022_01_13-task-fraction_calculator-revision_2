@@ -45,3 +45,16 @@ bool queryRestart()
 	else
 		return false;
 }
+
+
+void outStandard()
+{
+	cout
+	<< " --- --= === FRACTION CALCULATOR === =-- --- \n"
+	<< " \n"
+	<< " user input: \n"
+	<< " numerator 1 - separation character - denumerator 1 \n"
+	<< " mathematical operator ( + || - || * || / ) \n"
+	<< " numerator 2 - separation character - denumerator 2 \n"
+	<< " \n";
+}
