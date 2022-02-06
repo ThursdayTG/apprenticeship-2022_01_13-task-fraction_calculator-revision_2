@@ -29,9 +29,9 @@ int main()
 			loop = false;
 
 			//=== user input
-			int  num1;   // numerator
+			int  num1;  // numerator
 			char sep1;  // separator
-			int  den1;   // denominator
+			int  den1;  // denominator
 			cout << " fraction 1: \t\t";
 			cin  >> num1 >> sep1 >> den1;
 
@@ -92,7 +92,6 @@ int main()
 
 
 			//=== output
-			clearScreen();
 			outStandard();
 
 			cout

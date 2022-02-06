@@ -37,13 +37,17 @@ bool queryRestart()
 	cout << "\n\n restart? (0/1): ";
 	cin  >> restartOperator;
 
-	if		(  restartOperator == "1"
-			|| restartOperator == "y"       || restartOperator == "Y"
-			|| restartOperator == "t"       || restartOperator == "T"
-			|| restartOperator == "true"    || restartOperator == "not false")
+	if (    restartOperator == "1"
+		 || restartOperator == "y"     || restartOperator == "Y"
+		 || restartOperator == "t"     || restartOperator == "T"
+		 || restartOperator == "true"  || restartOperator == "not false"
+	)  {
 		return true;
+	}
 	else
+	{
 		return false;
+	}
 }
 
 
