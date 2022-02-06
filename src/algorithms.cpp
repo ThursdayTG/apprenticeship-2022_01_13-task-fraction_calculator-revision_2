@@ -1,6 +1,6 @@
 int cancelNum(int numerator, int denominator)
 {
-	for (int i = 2; i <= numerator + denominator; i++)
+	for (int i = numerator + denominator; i >= 2; i--)
 	{
 		if (numerator % i == 0 && denominator % i == 0)
 		{
@@ -14,7 +14,7 @@ int cancelNum(int numerator, int denominator)
 
 int cancelDen(int numerator, int denominator)
 {
-	for (int i = 2; i <= numerator + denominator; i++)
+	for (int i = numerator + denominator; i >= 2; i--)
 	{
 		if (numerator % i == 0 && denominator % i == 0)
 		{
@@ -46,6 +46,7 @@ float subtraction(float num1, float den1, float num2, float den2)
 
 	return result;
 }
+
 
 float multiplication(float num1, float den1, float num2, float den2)
 {

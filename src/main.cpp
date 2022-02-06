@@ -2,7 +2,6 @@
 #include <string>
 
 #include "../headers/genericFunctions.hpp"
-#include "../headers/userInput.hpp"
 #include "../headers/algorithms.hpp"
 
 
@@ -36,7 +35,7 @@ int main()
 			cin  >> num1 >> sep1 >> den1;
 
 			char mathOp;
-			cout << " mathematical operator:  ";
+			cout << " mathematical operator: ";
 			cin  >> mathOp;
 
 			int  num2;
@@ -96,8 +95,9 @@ int main()
 
 			cout
 			<< " fraction 1: \t\t" << num1 << sep1 << den1 << "\n"
-			<< " mathematical operator:  " << mathOp << "\n"
+			<< " mathematical operator: "  << mathOp       << "\n"
 			<< " fraction 2: \t\t" << num2 << sep2 << den2 << "\n"
+			<< " --------------------------------------------------" << "\n"
 			<< " result: \t\t"     << result
 			<< " \n";
 		}
