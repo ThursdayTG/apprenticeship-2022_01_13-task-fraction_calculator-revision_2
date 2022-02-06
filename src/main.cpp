@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 
-
 #include "../headers/genericFunctions.hpp"
+
+
 
 
 int main()
@@ -24,11 +25,23 @@ int main()
 		//=== example block
 		//local variable declaration
 
+		/*
 		cout << " test 1 ... ";
 		cout << " \n ";
 
 		cout << " test 2 ... "
 			 << " \n ";
+		*/
+
+
+		//=== standard output
+		cout << " --- --= === FRACTION CALCULATOR === =-- --- \n"
+			 << " \n"
+			 << " user input: \n"
+			 << " numerator 1 - separation character - denumerator 1 \n"
+			 << " mathematical operator ( + || - || * || / ) \n"
+			 << " numerator 2 - separation character - denumerator 2 \n"
+			 << " \n";
 
 
 		//=== end block
@@ -51,8 +64,8 @@ int main() {
 		// local variable declaration
 		bool	loop = true;
 		char	inputChar1, inputChar2;
-		int		inputNumerator1, inputDenominator1;
-		int		inputNumerator2, inputDenominator2;
+		int		inNum1, inDen1;
+		int		inNum2, inDen2;
 
 		float	output;
 
@@ -64,16 +77,16 @@ int main() {
 			// primary function execution
 			switch (inputChar2) {
 				case '1': case '+': case 'a': case 'A':
-					output = A(inputNumerator1, inputDenominator1, inputNumerator2, inputDenominator2);
+					output = A(inNum1, inDen1, inNum2, inDen2);
 				break;
 				case '2': case '-': case 'b': case 'B':
-					output = B(inputNumerator1, inputDenominator1, inputNumerator2, inputDenominator2);
+					output = B(inNum1, inDen1, inNum2, inDen2);
 				break;
 				case '3': case '*': case 'c': case 'C':
-					output = C(inputNumerator1, inputDenominator1, inputNumerator2, inputDenominator2);
+					output = C(inNum1, inDen1, inNum2, inDen2);
 				break;
 				case '4': case '/': case 'd': case 'D':
-					output = D(inputNumerator1, inputDenominator1, inputNumerator2, inputDenominator2);
+					output = D(inNum1, inDen1, inNum2, inDen2);
 				break;
 				default:
 					loop = true;
