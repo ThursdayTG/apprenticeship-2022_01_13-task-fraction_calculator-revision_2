@@ -8,4 +8,4 @@ Btw, managing local Git repos and managing GitHub are honestly two quite differe
 
 ---
 
-This has been uploaded primarily for archiving purposes.
+This project has been uploaded primarily for archiving purposes.
