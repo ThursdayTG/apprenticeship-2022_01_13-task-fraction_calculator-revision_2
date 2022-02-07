@@ -23,18 +23,14 @@ void clearScreen()
 }
 
 
-void pause()
-{
-	cin.ignore();
-	cin.get();
-}
-
-
 bool queryRestart()
 {
 	string restartOperator = "0";  // default value tries to prevent infinite loop repetition on unexpected error
 
-	cout << "\n\n restart? (0/1): ";
+	cout << " \n"
+		 << " \n"
+		 << " \n"
+		 << " restart? (0/1): ";
 	cin  >> restartOperator;
 
 	if (    restartOperator == "1"
@@ -56,12 +52,12 @@ void outStandard()
 	clearScreen();
 
 	cout
-	<< "\n"
-	<< " --- --= === FRACTION CALCULATOR === =-- --- \n"
+	<< " \n"
+	<< "       --- --= === FRACTION  CALCULATOR === =-- --- \n"
 	<< " \n"
 	<< " user input: \n"
 	<< " numerator 1 --- separation character --- denumerator 1 \n"
-	<< " mathematical operator ( + || - || * || / ) \n"
+	<< "        mathematical operator ( + || - || * || / )      \n"
 	<< " numerator 2 --- separation character --- denumerator 2 \n"
 	<< " \n";
 }

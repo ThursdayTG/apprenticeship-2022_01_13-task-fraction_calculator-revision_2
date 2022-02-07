@@ -117,9 +117,13 @@ int main()
 			{
 				cout << num2 - ((num2/den2) * den2) << sep2 << den2;
 			}
-			cout << "\n";
+			cout << " \n ";
 
-			cout << " --------------------------------------------------" << "\n"
+			for (int i = 0; i <= 50; i++)
+			{
+				cout << "-";
+			}
+			cout << " \n"
 				 << " result: \t\t" << result << "\n";
 		}
 
