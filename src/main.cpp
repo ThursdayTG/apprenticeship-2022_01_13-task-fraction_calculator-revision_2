@@ -119,7 +119,7 @@ int main()
 			}
 			cout << " \n ";
 
-			for (int i = 0; i <= 50; i++)
+			for (int i = 0; i <= 53; i++)
 			{
 				cout << "-";
 			}
