@@ -2,11 +2,9 @@
 #define HEADERS_GENERICFUNCTIONS
 
 
-void outStandard();
+void printHeader();
 
 void clearScreen();
-
-void pause();  // shorthand for `cin.ignore(); cin.get();`
 
 bool queryRestart();
 

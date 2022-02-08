@@ -13,13 +13,16 @@ using std::string;
 
 
 
+void outputImproperFraction(int, char, int, int);
+
+
 int main()
 {
 	bool restartOperator;  // used to determine whether do-while loop should be repeated manually
 
 	do
 	{
-		outStandard();
+		printHeader();
 
 
 		bool loop = true;
@@ -91,15 +94,40 @@ int main()
 
 
 			//=== output
-			outStandard();
+			printHeader();
 
-			cout
-			<< " fraction 1: \t\t" << num1 << sep1 << den1 << "\n"
-			<< " mathematical operator: "  << mathOp       << "\n"
-			<< " fraction 2: \t\t" << num2 << sep2 << den2 << "\n"
-			<< " --------------------------------------------------" << "\n"
-			<< " result: \t\t"     << result
-			<< " \n";
+			cout << " fraction 1: \t\t";
+			if (num1 / den1 > 0)
+			{
+				cout << num1 / den1;
+				cout << " ";
+			}
+			if (num1 - ((num1/den1) * den1) > 0)
+			{
+				cout << num1 - ((num1/den1) * den1) << sep1 << den1;
+			}
+			cout << "\n";
+
+			cout << " mathematical operator: " << mathOp << "\n";
+
+			cout << " fraction 2: \t\t";
+			if (num2 / den2 > 0)
+			{
+				cout << num2 / den2;
+				cout << " ";
+			}
+			if (num2 - ((num2/den2) * den2) > 0)
+			{
+				cout << num2 - ((num2/den2) * den2) << sep2 << den2;
+			}
+			cout << " \n ";
+
+			for (int i = 0; i <= 53; i++)
+			{
+				cout << "-";
+			}
+			cout << " \n"
+				 << " result: \t\t" << result << "\n";
 		}
 
 
@@ -110,4 +138,24 @@ int main()
 	while (restartOperator == true);
 
 	return 0;
+}
+
+
+
+
+void outputImproperFraction(int num, char sep, int den, int counter)
+{
+	cout << " fraction " << counter << ": \t\t";
+
+	if (num / den > 0)
+	{
+		cout << num / den;
+		cout << " ";
+	}
+
+	if (num - ((num/den) * den) > 0)
+	{
+		cout << num - ((num/den) * den) << sep << den;
+	}
+	cout << " \n ";
 }
