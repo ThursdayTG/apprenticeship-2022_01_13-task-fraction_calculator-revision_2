@@ -2,7 +2,7 @@
 #define HEADERS_GENERICFUNCTIONS
 
 
-void outStandard();
+void printHeader();
 
 void clearScreen();
 
