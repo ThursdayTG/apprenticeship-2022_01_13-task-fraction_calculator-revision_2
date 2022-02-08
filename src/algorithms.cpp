@@ -1,28 +1,14 @@
-int cancelNum(int numerator, int denominator)
+int adjustValue(int int1, int int2)
 {
-	for (int i = numerator + denominator; i >= 2; i--)
+	for (int i = int1 + int2; i >= 2; i--)
 	{
-		if (numerator % i == 0 && denominator % i == 0)
+		if (int1 % i == 0 && int2 % i == 0)
 		{
-			return numerator / i;
+			return int1 / i;
 		}
 	}
 
-	return numerator;
-}
-
-
-int cancelDen(int numerator, int denominator)
-{
-	for (int i = numerator + denominator; i >= 2; i--)
-	{
-		if (numerator % i == 0 && denominator % i == 0)
-		{
-			return denominator / i;
-		}
-	}
-
-	return denominator;
+	return int1;
 }
 
 

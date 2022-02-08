@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <numeric>
 
 #include "../headers/genericFunctions.hpp"
 #include "../headers/algorithms.hpp"
@@ -9,6 +11,8 @@ using std::cout;
 using std::cin;
 
 using std::string;
+
+using std::gcd;
 
 
 
@@ -45,19 +49,14 @@ int main()
 
 
 		//=== operations
-		float result = 0.0;
-
 		{
-			int temp;
+		int temp1 = 0;
+		int temp2 = 0;
 
-			temp = num1;
-			num1 = cancelNum(num1, den1);
-			den1 = cancelDen(temp, den1);
-
-			temp = num2;
-			num2 = cancelNum(num2, den2);
-			den2 = cancelDen(temp, den2);
+		temp1 = gcd(num1, den1);
 		}
+
+		float result = 0.0;
 
 		switch (mathOp)
 		{

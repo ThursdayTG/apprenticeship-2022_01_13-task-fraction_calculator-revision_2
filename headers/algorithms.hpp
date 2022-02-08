@@ -2,8 +2,7 @@
 #define HEADERS_ALGORITHMS
 
 
-int cancelNum(int, int);
-int cancelDen(int, int);
+int adjustValue(int, int);
 
 float addition(float, float, float, float);
 float subtraction(float, float, float, float);
