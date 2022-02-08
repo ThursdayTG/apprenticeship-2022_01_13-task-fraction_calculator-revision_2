@@ -96,31 +96,8 @@ int main()
 			//=== output
 			printHeader();
 
-			cout << " fraction 1: \t\t";
-			if (num1 / den1 > 0)
-			{
-				cout << num1 / den1;
-				cout << " ";
-			}
-			if (num1 - ((num1/den1) * den1) > 0)
-			{
-				cout << num1 - ((num1/den1) * den1) << sep1 << den1;
-			}
-			cout << "\n";
-
-			cout << " mathematical operator: " << mathOp << "\n";
-
-			cout << " fraction 2: \t\t";
-			if (num2 / den2 > 0)
-			{
-				cout << num2 / den2;
-				cout << " ";
-			}
-			if (num2 - ((num2/den2) * den2) > 0)
-			{
-				cout << num2 - ((num2/den2) * den2) << sep2 << den2;
-			}
-			cout << " \n ";
+			outputImproperFraction(num1, sep1, den1, 1);
+			outputImproperFraction(num2, sep2, den2, 2);
 
 			for (int i = 0; i <= 53; i++)
 			{
