@@ -18,10 +18,11 @@ void outputImproperFraction(int, char, int, int);
 
 int main()
 {
-	bool restartOperator = false;  // used to determine whether do-while loop should be repeated manually
+	bool restartOperator = true;  // used to determine whether do-while loop should be repeated manually
 
-	do
+	while (restartOperator == true)
 	{
+		restartOperator = false;
 		printHeader();
 
 
@@ -101,6 +102,7 @@ int main()
 			cout << " mathematical operator: " << mathOp << "\n";
 			outputImproperFraction(num2, sep2, den2, 2);
 
+			cout << " ";
 			for (int i = 0; i <= 53; i++)
 			{
 				cout << "-";
