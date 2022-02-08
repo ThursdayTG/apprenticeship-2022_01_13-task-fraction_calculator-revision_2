@@ -18,85 +18,87 @@ void outputImproperFraction(int, char, int, int);
 
 int main()
 {
-	bool restartOperator;  // used to determine whether do-while loop should be repeated manually
+	bool restartOperator = false;  // used to determine whether do-while loop should be repeated manually
 
 	do
 	{
 		printHeader();
 
 
-		bool loop = true;
-		while (loop == true)
+		//=== user input
+		int  num1;  // numerator
+		char sep1;  // separator
+		int  den1;  // denominator
+		cout << " fraction 1: \t\t";
+		cin  >> num1 >> sep1 >> den1;
+
+		char mathOp;
+		cout << " mathematical operator: ";
+		cin  >> mathOp;
+
+		int  num2;
+		char sep2;
+		int  den2;
+		cout << " fraction 2: \t\t";
+		cin  >> num2 >> sep2 >> den2;
+
+
+		//=== operations
+		float result = 0.0;
+
 		{
-			loop = false;
+			int temp;
 
-			//=== user input
-			int  num1;  // numerator
-			char sep1;  // separator
-			int  den1;  // denominator
-			cout << " fraction 1: \t\t";
-			cin  >> num1 >> sep1 >> den1;
+			temp = num1;
+			num1 = cancelNum(num1, den1);
+			den1 = cancelDen(temp, den1);
 
-			char mathOp;
-			cout << " mathematical operator: ";
-			cin  >> mathOp;
+			temp = num2;
+			num2 = cancelNum(num2, den2);
+			den2 = cancelDen(temp, den2);
+		}
 
-			int  num2;
-			char sep2;
-			int  den2;
-			cout << " fraction 2: \t\t";
-			cin  >> num2 >> sep2 >> den2;
-
-
-			//=== operations
+		switch (mathOp)
+		{
+			case '1': case '+':
 			{
-				int temp;
-
-				temp = num1;
-				num1 = cancelNum(num1, den1);
-				den1 = cancelDen(temp, den1);
-
-				temp = num2;
-				num2 = cancelNum(num2, den2);
-				den2 = cancelDen(temp, den2);
+				result = addition(num1, den1, num2, den2);
+				break;
 			}
-
-			float result = 0.0;
-
-			switch (mathOp)
+			case '2': case '-':
 			{
-				case '1': case '+':
-				{
-					result = addition(num1, den1, num2, den2);
-					break;
-				}
-				case '2': case '-':
-				{
-					result = subtraction(num1, den1, num2, den2);
-					break;
-				}
-				case '3': case '*':
-				{
-					result = multiplication(num1, den1, num2, den2);
-					break;
-				}
-				case '4': case '/':
-				{
-					result = division(num1, den1, num2, den2);
-					break;
-				}
-				default:
-				{
-					mathOp = '0';
-					loop = true;
-				}
+				result = subtraction(num1, den1, num2, den2);
+				break;
 			}
+			case '3': case '*':
+			{
+				result = multiplication(num1, den1, num2, den2);
+				break;
+			}
+			case '4': case '/':
+			{
+				result = division(num1, den1, num2, den2);
+				break;
+			}
+			default:
+			{
+				mathOp = '0';
+
+				cout << " \n"
+					 << " \n invalid input - mathOp value unexpected";
+
+				restartOperator = true;
+			}
+		}
 
 
-			//=== output
+		//=== output
+		if (restartOperator == false)
+		{
 			printHeader();
 
 			outputImproperFraction(num1, sep1, den1, 1);
+			cout << " mathematical operator: " << mathOp << "\n";
 			outputImproperFraction(num2, sep2, den2, 2);
 
 			for (int i = 0; i <= 53; i++)
@@ -134,5 +136,5 @@ void outputImproperFraction(int num, char sep, int den, int counter)
 	{
 		cout << num - ((num/den) * den) << sep << den;
 	}
-	cout << " \n ";
+	cout << " \n";
 }
