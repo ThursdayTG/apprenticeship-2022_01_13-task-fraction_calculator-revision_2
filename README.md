@@ -2,7 +2,7 @@
 
 In my apprenticeship, we were tasked to create a fraction calculator after being taught about functions. Had some good fun with it, decided I want to continue work on it for leisure as this has turned into my most complex project thus far.
 
-TODO:
+**TODO:**
  - make functions for calculations actually do fraction calculations instead of having them rely entirely on floats
  - implement fractions as structs
 
